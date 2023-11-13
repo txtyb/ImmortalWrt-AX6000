@@ -7,7 +7,7 @@
 # https://github.com/P3TERX/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
 #
-name: Redmi-AX6000-OpenWrt
+name: Redmi-AX6000-ImmortalWrt
 
 on:
   repository_dispatch:
@@ -21,18 +21,18 @@ on:
     - cron: "0 0 ? * FRI"
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: OpenWrt/.config
-  DIY_P1_SH: OpenWrt/diy-part1.sh
-  DIY_P2_SH: OpenWrt/diy-part2.sh
+  CONFIG_FILE: ImmortalWrt/.config
+  DIY_P1_SH: ImmortalWrt/diy-part1.sh
+  DIY_P2_SH: ImmortalWrt/diy-part2.sh
   SSH_ACTIONS: false
   UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: true
+  UPLOAD_RELEASE: false
   TZ: Asia/Shanghai
   ###############改名字##############
-  OPENWRT_NAME: openwrt
+  OPENWRT_NAME: immortalwrt
 
 jobs:
   build:
