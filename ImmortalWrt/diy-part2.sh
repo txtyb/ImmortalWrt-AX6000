@@ -11,6 +11,8 @@ echo "修改时区"
 utc_name='Asia\/Shanghai' 
 sed -i "s/'UTC'/'CST-8'\n   set system.@system[-1].zonename='$utc_name'/g" package/base-files/files/bin/config_generate
 
+sed -i 's#CGO_ENABLED=0#CGO_ENABLED=1#g' feeds/packages/net/mosdns/Makefile
+
 # echo "修改机器名称"
 # device_name='OpenWrt'
 # sed -i "s/OpenWrt/$device_name/g" ./package/base-files/files/bin/config_generate
